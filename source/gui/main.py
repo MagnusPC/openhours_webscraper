@@ -17,7 +17,6 @@ print(f'multi search: {PlaceFinder().search("genbrug aalborg")}')
 
 # toodles
 main_link = 'https://www.google.com/maps/search/genbrug+aalborg/'
-# TODO remember to bypass cookies
 # TODO remove 'tøjcontainer'
 
 # # extracting with selenium https://youtu.be/aZ45fzfyc8Q
