@@ -1,0 +1,113 @@
+<html lang="da">
+<head>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<title>About Hello Mr Worldwide cooporation</title>
+	
+	<!-- <link rel="stylesheet" type="text/css" href="jCarousel/jcarousel.style.css"> --> 
+	<link rel="stylesheet" type="text/css" href="jCarousel/jcarousel.basic.css">
+	<script type="text/javascript" src="jCarousel/jquery.js"></script>
+	<script type="text/javascript" src="jCarousel/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="jCarousel/jcarousel.basic.js"></script>
+	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+			function myFunction() {
+			  var x = document.getElementById("myTopnav");
+			  if (x.className === "topnav") {
+				x.className += " responsive";
+			  } else {
+				x.className = "topnav";
+			  }
+			}
+		</script>
+	<script src="jscript.js"></script>	
+</head>
+<body>
+	<header>
+		<div class="topnav" id="myTopnav">
+			<a href="index.html" class="active">Hjem</a>
+			<div class="dropdown">
+				<button class="dropbtn">Virksomhedsgrene
+					<i class="fa">&#xf0d7;</i>
+				</button>
+				<div class="dropdown-content">
+					<a href="wilson_model.html">Wilsons EOQ tool</a>
+					<a href="">Underafdeling x</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Om os
+					<i class="fa">&#xf0d7;</i>
+				</button>
+				<div class="dropdown-content">
+					<a href="about.html">About us</a>
+					<a href="contact.html">Kontakt</a>
+				</div>
+			</div>
+			<div class="dropdown">
+				<button class="dropbtn">Samarbejdspartnere
+					<i class="fa">&#xf0d7;</i> <!-- caret down -->
+				</button>
+				<div class="dropdown-content">
+					<p class="linkdesc"><em>Bemærk du forlader siden.</em></p>
+					<a href="https://www.ucn.dk/">UCNs hjemmeside</a>
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a> <!-- burger menu -->
+	</header>
+	<main>
+		<div class="wrapper">
+			<h1>Basic carousel</h1>
+
+			<p>This example shows how to setup a basic carousel with prev/next controls and pagination.</p>
+
+			<div class="jcarousel-wrapper">
+				<div class="jcarousel">
+					<ul>
+						<li><img src="https://media.istockphoto.com/photos/smiling-businessman-picture-id186853990?k=6&m=186853990&s=170667a&w=0&h=e3EUdOIJC5kufnWA7-e0BcJUIHEXqdiyO02_9MSewj0=" width="600" height="400" alt=""></li>
+						<li><img src="https://thumbs.dreamstime.com/z/successful-businessman-4343061.jpg" width="600" height="400" alt=""></li>
+					</ul>
+				</div>
+
+				<p class="photo-credits">
+					Photos by <a href="http://www.mw-fotografie.de">Marc Wiegelmann</a>
+				</p>
+
+				<a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+				<a href="#" class="jcarousel-control-next">&rsaquo;</a>
+				
+				<p class="jcarousel-pagination">
+					
+				</p>
+			</div>
+		</div>
+		<div>
+			<article>
+				<h1>About us</h1>
+				<p>
+					<em>100% gamer</em>
+				</p>
+				<p>
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.Aenean vulputate eleifend tellus.Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. 	Curabitur ullamcorper ultricies nisi. Nam eget dui. 
+				</p>
+				<p>
+					Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero.
+				</p>
+				<p>
+					Fusce vulputate eleifend sapien.Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu.
+				</p>
+				<p>
+					Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris.
+				</p>
+			</article>
+		</div>
+	</main>
+</body>
+<footer>
+	<address>
+		&copy; me
+	</address>
+	</footer>
+</html>
