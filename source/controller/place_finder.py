@@ -78,7 +78,7 @@ class PlaceFinder:
 
     def search_bar_unclicker(self, driver):
         mouse_tracker = driver.find_element(By.XPATH, '/html/body/div[3]/div[8]/div[9]/div/div/div[1]/div[2]/div/div['
-                                                      '1]/div/div/div[1]/div[1]/div[6]')  # TODO fix it felix
+                                                      '1]/div/div/div[1]/div[1]/div[6]')
         ActionChains(driver) \
             .move_to_element(mouse_tracker) \
             .click(mouse_tracker) \
