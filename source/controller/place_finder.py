@@ -4,9 +4,6 @@ import time
 import selenium.common.exceptions
 from selenium import webdriver
 from selenium.webdriver import ActionChains
-from selenium.webdriver.common.actions.action_builder import ActionBuilder
-from selenium.webdriver.common.actions.mouse_button import MouseButton
-from selenium.webdriver.common.actions.wheel_input import ScrollOrigin
 from selenium.webdriver.common.by import By
 
 
@@ -33,55 +30,73 @@ def wait_for_site_load():
     return script
 
 
-class PlaceFinder:
-    def search(self, query):
-        driver = webdriver.Firefox()
-        # driver.fullscreen_window()
-        url = f"https://www.google.com/maps/search/{query.replace(' ', '+')}/"
+def element_remover(hits, str_to_remove):
+    # remove duplicates
+    sorted_hits = list(dict.fromkeys(hits))
 
-        try:
-            driver.get(url)
+    # remove elements containing 'tøjcontainer'
+    for element in sorted_hits:
+        if element.accessible_name.find(str_to_remove) != -1:
+            print(f'removed {element.accessible_name} with id {element.id}')
+            sorted_hits.remove(element)  # somehow two always escape
 
-            # pass the cookie page
-            time.sleep(1)
-            cookie = driver.find_element(By.XPATH, '/html/body/c-wiz/div/div/div/div[2]/div[1]/div[3]'
-                                                   '/div[1]/div[1]/form[1]/div/div/button')
-            cookie.click()
+    return sorted_hits
 
-            # unclick search bar
-            self.search_bar_unclicker(driver)
 
-            # lists the first 7 hits, a scroll is needed to load more
-            hits = []
-            while len(hits) < 200:
-                # hits.append(driver.find_elements(By.CLASS_NAME, 'Nv2PK.THOPZb.CpccDe'))
-                found_elements = driver.find_elements(By.CLASS_NAME, 'hfpxzc')
-                hits.extend(found_elements)
-                if hits:
-                    # TODO wait for next batch to load before continueing, instead of wait
-                    action = ActionChains(driver)
-                    bob = hits[-1].location_once_scrolled_into_view
-                    action.scroll_to_element(hits[-1]).perform()
-                    time.sleep(2)
+def search_bar_unclicker(driver):
+    mouse_tracker = driver.find_element(By.XPATH, '/html/body/div[3]/div[8]/div[9]/div/div/div[1]/div[2]/div/div['
+                                                  '1]/div/div/div[1]/div[1]/div[6]')
+    ActionChains(driver) \
+        .move_to_element(mouse_tracker) \
+        .click(mouse_tracker) \
+        .perform()
 
-                sys.stdout.write('.')  # a loading bar while waiting for the while loop to finish
-                sys.stdout.flush()
+    time.sleep(1)
 
-            for hit in hits:
-                print(f'\nGenbrug: {hit.accessible_name} med page id: {hit.id}')
 
-            urls = driver.execute_script(wait_for_site_load())  # unused
+def search(query, word_to_avoid):
+    driver = webdriver.Firefox()
+    url = f"https://www.google.com/maps/search/{query.replace(' ', '+')}/"
 
-            return urls or [url]
-        except selenium.common.exceptions.MoveTargetOutOfBoundsException:
-            driver.quit()
+    try:
+        driver.get(url)
 
-    def search_bar_unclicker(self, driver):
-        mouse_tracker = driver.find_element(By.XPATH, '/html/body/div[3]/div[8]/div[9]/div/div/div[1]/div[2]/div/div['
-                                                      '1]/div/div/div[1]/div[1]/div[6]')
-        ActionChains(driver) \
-            .move_to_element(mouse_tracker) \
-            .click(mouse_tracker) \
-            .perform()
-
+        # pass the cookie page
         time.sleep(1)
+        cookie = driver.find_element(By.XPATH, '/html/body/c-wiz/div/div/div/div[2]/div[1]/div[3]'
+                                               '/div[1]/div[1]/form[1]/div/div/button')
+        cookie.click()
+
+        # unclick search bar
+        search_bar_unclicker(driver)
+
+        # lists the first 7 hits, a scroll is needed to load more
+        hits = []
+        sys.stdout.write('Loading elements')
+        # TODO change looping method, still sometimes breaks off at the end
+        while len(hits) < 200:
+            found_elements = driver.find_elements(By.CLASS_NAME, 'hfpxzc')
+            hits.extend(found_elements)
+            if hits:
+                action = ActionChains(driver)
+                bob = hits[-1].location_once_scrolled_into_view  # TODO look up
+                action.scroll_to_element(hits[-1]).perform()
+                time.sleep(2)  # TODO change to wait for next element to load
+
+            sys.stdout.write('.')  # a loading bar while waiting for the while loop to finish
+            sys.stdout.flush()
+
+        sys.stdout.write('\n')  # add space after loading
+        hits = element_remover(hits, word_to_avoid)
+
+        for hit in hits:
+            print(f'\nGenbrug: {hit.accessible_name} med page id: {hit.id}')
+
+        urls = driver.execute_script(wait_for_site_load())  # unused
+
+        driver.quit()
+
+        return urls or [url]
+
+    except selenium.common.exceptions:
+        driver.minimize_window()
