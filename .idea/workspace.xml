@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5471aa86-3905-4469-a26b-09b220666ade" name="Changes" comment="some func">
-      <change afterPath="$PROJECT_DIR$/source/controller/load_content.js" afterDir="false" />
+    <list default="true" id="5471aa86-3905-4469-a26b-09b220666ade" name="Changes" comment="added: cookie pass; working on: hitlist, unclicker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/controller/place_finder.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/controller/place_finder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/gui/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/gui/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +54,35 @@
       </console-settings>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="openhours_webscraper" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/source/gui" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/source/gui/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration>C:\Users\magnu\AppData\Roaming\Subversion</configuration>
@@ -70,7 +97,9 @@
       <workItem from="1699039468715" duration="2375000" />
       <workItem from="1699041946351" duration="4363000" />
       <workItem from="1699110012940" duration="301000" />
-      <workItem from="1699124469196" duration="12302000" />
+      <workItem from="1699124469196" duration="12446000" />
+      <workItem from="1699278303948" duration="1231000" />
+      <workItem from="1699543008246" duration="5047000" />
     </task>
     <task id="LOCAL-00001" summary="some func">
       <option name="closed" value="true" />
@@ -80,7 +109,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699129758829</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added: cookie pass; working on: hitlist, unclicker">
+      <option name="closed" value="true" />
+      <created>1699137039055</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699137039055</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,11 +136,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="some func" />
-    <option name="LAST_COMMIT_MESSAGE" value="some func" />
+    <MESSAGE value="added: cookie pass; working on: hitlist, unclicker" />
+    <option name="LAST_COMMIT_MESSAGE" value="added: cookie pass; working on: hitlist, unclicker" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/openhours_webscraper$place_finder.coverage" NAME="place_finder Coverage Results" MODIFIED="1699136517804" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/controller" />
-    <SUITE FILE_PATH="coverage/openhours_webscraper$main.coverage" NAME="main Coverage Results" MODIFIED="1699136760241" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/gui" />
+    <SUITE FILE_PATH="coverage/openhours_webscraper$place_finder.coverage" NAME="place_finder Coverage Results" MODIFIED="1699544883878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/controller" />
+    <SUITE FILE_PATH="coverage/openhours_webscraper$main.coverage" NAME="main Coverage Results" MODIFIED="1699548113795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/gui" />
     <SUITE FILE_PATH="coverage/openhours_webscraper$scrapfly_tutorial.coverage" NAME="scrapfly_tutorial Coverage Results" MODIFIED="1699127998763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/source/model" />
   </component>
 </project>
