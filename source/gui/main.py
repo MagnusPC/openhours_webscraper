@@ -10,5 +10,6 @@ print("[" + webscraper_dir + "]")
 print(f'multi search: {search("genbrug aalborg", "tøjcontainer")}')
 
 # toodles
-main_link = 'https://www.google.com/maps/search/genbrug+aalborg/'
+main_url = 'https://www.google.com/maps/search/genbrug+aalborg/'
 # TODO make nice ui
+# TODO data analysis, connect with gui?

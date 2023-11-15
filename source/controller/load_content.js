@@ -13,4 +13,4 @@ function waitCss(selector, n=1, require=false, timeout=5000) {
     }
 }
 const results = waitCss("div[role*=article]>a", n = 10, require = false);
-// return Array.from(results).map((el) => el.getAttribute("href"))
+// return Array.from(results).map((el) => el.getAttribute("href")) TODO refactor

@@ -32,7 +32,7 @@ def wait_for_site_load():
 
 def element_remover(hits, str_to_remove):
     # remove duplicates
-    sorted_hits = list(dict.fromkeys(hits))
+    sorted_hits = list(dict.fromkeys(hits))  # better to not collect duplicates
 
     # remove elements containing 'tøjcontainer'
     for element in sorted_hits:
@@ -89,6 +89,7 @@ def search(query, word_to_avoid):
         sys.stdout.write('\n')  # add space after loading
         hits = element_remover(hits, word_to_avoid)
 
+        # visualizer for collected data, TODO save as file instead, for data analysis
         for hit in hits:
             print(f'\nGenbrug: {hit.accessible_name} med page id: {hit.id}')
 
@@ -98,5 +99,5 @@ def search(query, word_to_avoid):
 
         return urls or [url]
 
-    except selenium.common.exceptions:
+    finally:
         driver.minimize_window()
